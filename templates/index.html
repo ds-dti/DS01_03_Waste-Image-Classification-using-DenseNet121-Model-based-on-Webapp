@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<style type="text/css">
+			* {
+				font-family: 'Montserrat', sans-serif;
+			}
+
+			body, html {
+				color: white;
+				background:url('/static/img/bg-image.jpg') no-repeat center center fixed;
+				-moz-background-size: cover;
+				-webkit-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}
+
+			input[type="file"] {
+				display: none;
+				align-items: center
+			}
+
+			#file {
+				color: white;
+				height: 60px;
+				width: 200px;
+				background-color: #134611;
+				border-style: none;
+				border-radius: 5px;
+				padding-top: 18px;
+				text-align: center;
+			}
+
+			#file:hover {
+				color: #134611;
+				height: 60px;
+				width: 200px;
+				background-color: white;
+				border-style: none;
+				border-radius: 5px;
+			}
+
+			#submit {
+				color: white;
+				height: 60px;
+				width: 300px;
+				background-color: transparent;
+				border-style: solid;
+				border-color: black;
+				border-radius: 5px;
+				padding-top: 18px;
+				text-align: center;
+			}
+
+			#submit:hover {
+				color: #134611;
+				height: 60px;
+				width: 300px;
+				background-color: white;
+				opacity: 1;
+				border-style: solid;
+				border-color: white;
+				border-style: none;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+
+	<title>Trash Classification</title>
+
+	<body>
+		<div class="container">
+			<div class="row" style="margin-top: 30%;">
+				<div class="col-md-6">
+					<form method="post" action="/" enctype="multipart/form-data">
+						<dl>
+							<p>
+								<input type="file" name="file" id="file" class="inputfile" autocomplete="off" required>
+								<label for="file" id="file">CHOOSE A FILE</label>
+							</p>
+						</dl>
+						<dl>
+							<p>
+								<input type="submit" name="submit" id="submit" class="inputsubmit" autocomplete="off" required hidden="hidden">
+								<label for="submit" id="submit">PREDICT YOUR TRASH TYPE</label>
+							</p>
+						</dl>
+						<p>
+							{% with messages = get_flashed_messages() %}
+							{% if messages %}
+								Hasil: {{ messages[0] }}
+								| Source : {{ messages[2] }}
+								| Probabilities Kelas Reuse : {{ messages[4] }} , Organik : {{ messages[5] }}, Recyclable : {{ messages[6] }}
+								
+
+							{% endif %}
+							{% endwith %}
+						</p>
+					</form>
+				</div>
+				<div class="col-md-6">				
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			const realFileBtn = document.getElementById("inputfile");
+			const realFileBtn = document.getElementById("custom-button");
+			const realFileBtn = document.getElementById("custom-text");
+
+			customBtn.addEventListener("click", function() {
+				realFileBtn.click();
+			})
+		</script>
+	</body>
+</html>
