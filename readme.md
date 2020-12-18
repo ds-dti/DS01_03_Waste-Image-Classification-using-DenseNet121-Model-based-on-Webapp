@@ -39,6 +39,8 @@ DenseNet (Dense Convolutional Network) adalah arsitektur yang berfokus untuk mem
 
 ![Poster DTI Klasifikasi2](https://user-images.githubusercontent.com/15316744/102346892-316f6c80-3fd2-11eb-99d8-2786b86803cb.jpg)
 
+video : https://www.youtube.com/watch?v=V2NqvNIcRhU&feature=youtu.be
+
 ## Penggunaan
 * Install Requirements
 ```
